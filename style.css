@@ -1,0 +1,151 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1e1e2f, #12121e);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #00fff7;
+}
+
+.calculator {
+  background: #27293d;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 20px rgba(0, 255, 247, 0.3),
+    inset 0 0 10px #00fff7;
+  width: 340px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  background: linear-gradient(145deg, #0f111f, #1a1c2c);
+  border-radius: 12px;
+  color: #00fff7;
+  font-size: 2.8rem;
+  padding: 20px 25px;
+  text-align: right;
+  min-height: 70px;
+  user-select: none;
+  box-shadow: inset 2px 2px 5px #0c0d17,
+              inset -2px -2px 5px #1c1d36;
+  margin-bottom: 25px;
+  overflow-x: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+button {
+  padding: 20px 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  color: #00fff7;
+  background: linear-gradient(145deg, #1c1d33, #272a48);
+  box-shadow:
+    4px 4px 8px #1a1a2f,
+    -4px -4px 8px #32355b;
+  transition: all 0.25s ease;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background: linear-gradient(145deg, #00fff7, #00c8cc);
+  color: #121212;
+  box-shadow:
+    0 0 12px #00fff7,
+    0 0 20px #00c8cc;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 4px 4px 8px #1a1a2f,
+    inset -4px -4px 8px #32355b;
+}
+
+.operator {
+  background: linear-gradient(145deg, #009688, #00695c);
+  box-shadow:
+    4px 4px 10px #004d40,
+    -4px -4px 10px #00796b;
+  color: #e0f2f1;
+}
+
+.operator:hover {
+  background: linear-gradient(145deg, #00bfa5, #004d40);
+  color: #ffffff;
+  box-shadow:
+    0 0 14px #00bfa5,
+    0 0 22px #004d40;
+}
+
+.clear {
+  background: linear-gradient(145deg, #e53935, #ab000d);
+  box-shadow:
+    4px 4px 10px #8c1a15,
+    -4px -4px 10px #e94b4b;
+  color: #fce4ec;
+}
+
+.clear:hover {
+  background: linear-gradient(145deg, #ff6f60, #ab000d);
+  color: #fff;
+  box-shadow:
+    0 0 14px #ff6f60,
+    0 0 22px #ab000d;
+}
+
+/* Make zero button span two columns */
+button[data-value="0"] {
+  grid-column: span 2;
+}
+
+/* Scrollbar styling for overflow on display */
+.display::-webkit-scrollbar {
+  height: 6px;
+}
+
+.display::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.display::-webkit-scrollbar-thumb {
+  background: #00fff7;
+  border-radius: 10px;
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    width: 90vw;
+    padding: 20px;
+  }
+
+  .display {
+    font-size: 2rem;
+    padding: 15px 20px;
+  }
+
+  button {
+    font-size: 1.3rem;
+    padding: 15px 0;
+  }
+}
